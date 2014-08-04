@@ -4,8 +4,8 @@
 # http://code-worrier.com/blog/git-branch-in-bash-prompt/
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
-# Load in the git branch prompt script.
-source ~/.git-prompt.sh
+# Load in the git branch prompt script in your bash profile.
+echo "source ~/.git-prompt.sh" >> ~/.bash_profile
 
 # Copy this into your .bash_profile
 # export PS1="\h\[\e[32;1m\] \w\[\e[32;1m\] \$(__git_ps1) \[\e[0m\]"
