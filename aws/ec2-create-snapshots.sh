@@ -28,7 +28,7 @@ do
   # NAME=$(aws ec2 describe-volumes --filter Name=tag:Backup,Values="1" | grep Name | cut -f 3 | nl | grep -w [^0-9]$COUNT | cut -f 2)
   echo "Volume Name: "$NAME
   
-  CLIENT=$(echo "$DESCRIBEVOLUMES" | grep Client | cut -f 3 | nl | grep -w $COUNT | cut -f 2)
+  CLIENT=$(echo "$DESCRIBEVOLUMES" | grep Client | cut -f 3 | nl | grep -w [^0-9]$COUNT | cut -f 2)
   # CLIENT=$(aws ec2 describe-volumes --filter Name=tag:Backup,Values="1" | grep Client | cut -f 3 | nl | grep -w $COUNT | cut -f 2)
   echo "Client: "$CLIENT
   
