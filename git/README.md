@@ -1,10 +1,8 @@
 git
 =======
 
-Place these files in your home folder (~/)
+Place these files in your OS X home folder (~/) for advanced git functions
 
-- **.git-completion.bash** autocomplete for git
-
-- **.git-prompt.sh** add repo status and branch to prompt
-
-- **.gitconfig** customizations and shortcuts for git
+- **.git-completion.bash** Autocomplete for git
+- **.git-prompt.sh** Add repo status and branch to prompt
+- **.gitconfig** Customizations and shortcuts for git
