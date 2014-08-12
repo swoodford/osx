@@ -6,6 +6,7 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 - **build-mavericks-bootable-usb.sh** Build an OS X Mavericks Bootable Thumb Drive
 - **convert-yosemite-beta-virtualbox.sh** Convert the OS X Yosemite Beta installer app to a format that is compatible with VirtualBox
 - **customize-bash-profile.sh** Bash profile customizations
+- **install-s3cmd-osx.sh** Install s3cmd on OS X
 - **ipblacklistmaster** List of IPs known to repeatedly attempt brute force SSH attacks
 - **ipblacklistservers** List of server host name aliases to apply IPTables blocking
 - **ipblock.sh** Runs on the server side to apply IPTables blocking
