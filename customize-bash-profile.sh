@@ -32,7 +32,7 @@ export LSCOLORS=eafxcxdxbxegedabagacad" >> ~/.bash_profile
 echo "export GREP_OPTIONS='--color=auto'" >> ~/.bash_profile
 
 # Add alias for ll
-echo "alias ll="ls -fl"" >> ~/.bash_profile
+echo "alias ll='ls -fl'" >> ~/.bash_profile
 
 # Source in .profile
 echo "source ~/.profile" >> ~/.bash_profile
