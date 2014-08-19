@@ -15,6 +15,7 @@
   df = diff
   lg = log -p
   p = pull
+  pu = push
 
 [filter "media"]
 	clean = git-media-clean %f
