@@ -96,7 +96,6 @@ read -r -p "Setup Database Alarms? (y/n) " SETUPDB
     if [[ $DBNUM > 0 ]] && echo "$DBNUM" | egrep '^[0-9]+$' >/dev/null 2>&1; then
 
       # Begin loop to create database alarms
-      START=1
       for (( COUNT=$START; COUNT<=$DBNUM; COUNT++ )) do
         echo "DB #"$COUNT
         echo -n "Database Environment? (Beta/Prod) "
@@ -139,6 +138,6 @@ read -r -p "Setup Database Alarms? (y/n) " SETUPDB
       fi
     fi
   else
-    echo "Invalid Response"
+    echo "Exiting"
   fi
 echo "Done!"
