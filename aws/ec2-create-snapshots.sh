@@ -22,10 +22,10 @@ do
   VOLUME=$(echo "$DESCRIBEVOLUMES" | cut -f 9 | nl | grep -w $COUNT | cut -f 2)
   echo "Volume ID: "$VOLUME
   
-  NAME=$(echo "$DESCRIBEVOLUMES" | grep Name | cut -f 3 | nl | grep -w [^0-9]$COUNT | cut -f 2)
+  NAME=$(echo "$DESCRIBEVOLUMES" | grep Name | cut -f 3 | nl | grep -w [^0-9][[:space:]]$COUNT | cut -f 2)
   echo "Volume Name: "$NAME
   
-  CLIENT=$(echo "$DESCRIBEVOLUMES" | grep Client | cut -f 3 | nl | grep -w [^0-9]$COUNT | cut -f 2)
+  CLIENT=$(echo "$DESCRIBEVOLUMES" | grep Client | cut -f 3 | nl | grep -w [^0-9][[:space:]]$COUNT | cut -f 2)
   echo "Client: "$CLIENT
   
   DESCRIPTION=$NAME-$(date +%m-%d-%Y)
