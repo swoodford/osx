@@ -3,6 +3,7 @@ osx
 
 A collection of shell scripts meant to be run in OS X for performing various tasks
 
+- **analyze-ip-relationships.php** Analyze a large list of IPs for potential relationships to help discover a botnet attacking servers
 - **build-mavericks-bootable-usb.sh** Build an OS X Mavericks Bootable Thumb Drive
 - **convert-yosemite-beta-virtualbox.sh** Convert the OS X Yosemite Beta installer app to a format that is compatible with VirtualBox
 - **customize-bash-profile.sh** Bash profile customizations
