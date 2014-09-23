@@ -17,3 +17,4 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 - **serverupdates.sh** Automatically install server updates and log results to file
 - **setup-developer-environment.sh** Setup a new developer environment in OS X (untested and considered experimental)
 - **syncSSHkeys.sh** Sync authorized ssh keys on all servers with a master list
+- **update-developer-environment.sh** Update developer environment in OS X (untested and considered experimental)
