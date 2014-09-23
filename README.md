@@ -15,4 +15,5 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 - **server-security-updates.sh** Run locally (on OS X) to apply updates in serverupdates.sh script
 - **serverlist** List of server host name aliases to apply updates
 - **serverupdates.sh** Automatically install server updates and log results to file
+- **setup-developer-environment.sh** Setup a new developer environment in OS X (untested and considered experimental)
 - **syncSSHkeys.sh** Sync authorized ssh keys on all servers with a master list
