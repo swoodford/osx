@@ -1,5 +1,6 @@
 #!/bin/bash
 # This script will update your developer environment in OS X. Proceed carefully!
+# Assumptions: You have Homebrew and RVM installed.
 
 function pause(){
 	read -p "Press any key to continue..."
