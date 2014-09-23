@@ -1,4 +1,4 @@
-<!-- Take a list of IPs from file ip-list.txt and analyze for relationships -->
+<!-- Take a list of IPs from file ipblacklistmaster and analyze for relationships -->
 
 <?php
 
