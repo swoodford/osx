@@ -95,7 +95,8 @@ read -r -p "Setup Database Alarms? (y/n) " SETUPDB
     read DBNUM
     if [[ $DBNUM > 0 ]] && echo "$DBNUM" | egrep '^[0-9]+$' >/dev/null 2>&1; then
 
-      # Begin loop to create database alarms
+    # Begin loop to create database alarms      
+      START=1
       for (( COUNT=$START; COUNT<=$DBNUM; COUNT++ )) do
         echo "DB #"$COUNT
         echo -n "Database Environment? (Beta/Prod) "
@@ -124,10 +125,16 @@ read -r -p "Setup Database Alarms? (y/n) " SETUPDB
         echo $CLIENT $ENVIRONMENT "Database CPU Check Alarm Set"
         echo "========================================"
 
-        #  Database Memory Usage Check
-        aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB Mem Check" --alarm-description "$CLIENT $ENVIRONMENT Database Freeable Memory <50,000,000 for 5 minutes" --metric-name "FreeableMemory" --namespace "AWS/RDS" --statistic "Average" --unit "Bytes" --period 60 --threshold "50000000" --comparison-operator "LessThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 5 --alarm-actions "$ALARMACTION"
+        # Database Memory Usage Check
+        aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB Mem Check" --alarm-description "$CLIENT $ENVIRONMENT Database Freeable Memory < 200 MB for 5 minutes" --metric-name "FreeableMemory" --namespace "AWS/RDS" --statistic "Average" --unit "Bytes" --period 60 --threshold "200000000" --comparison-operator "LessThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 5 --alarm-actions "$ALARMACTION"
         echo "========================================"
         echo $CLIENT $ENVIRONMENT "Database Memory Usage Alarm Set"
+        echo "========================================"
+
+        # Database Available Storage Space Check
+        aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB Storage Check" --alarm-description "$CLIENT $ENVIRONMENT Database Available Storage Space < 200 MB" --metric-name "FreeStorageSpace" --namespace "AWS/RDS" --statistic "Average" --unit "Bytes" --period 60 --threshold "200000000" --comparison-operator "LessThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
+        echo "========================================"
+        echo $CLIENT $ENVIRONMENT "Database Available Storage Space Alarm Set"
         echo "========================================"
       done
     else
