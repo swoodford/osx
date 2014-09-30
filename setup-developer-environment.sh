@@ -124,6 +124,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		read -rp "Configure AWS CLI? (y/n) " CONFIGURE
 		if [[ $CONFIGURE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			aws configure
+			complete -C '/usr/local/aws/bin/aws_completer' aws
 		fi
 	else
 		echo "Xcode must be installed before continuing."
