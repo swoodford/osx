@@ -4,9 +4,9 @@
 
 # ALARMACTION="arn:aws:sns:us-east-1:YOURACCOUNTNUMBER:YOURSNSALERTNAME"
 
-echo "========================================"
+echo "================================================================="
 echo "       Create CloudWatch Alarms"
-echo "========================================"
+echo "================================================================="
 echo
 
 echo -n "Client Name? "
@@ -32,14 +32,14 @@ if [[ $SERVERNUM > 0 ]] && echo "$SERVERNUM" | egrep '^[0-9]+$' >/dev/null 2>&1;
 
     # Load Balancer Unhealthy Host Check
     aws cloudwatch put-metric-alarm --alarm-name "$CLIENT Unhealthy Host Check" --alarm-description "$CLIENT Load Balancer Unhealthy Host Detected" --metric-name "UnHealthyHostCount" --namespace "AWS/ELB" --statistic "Sum" --period 60 --threshold 0 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
-    echo "========================================"
+    echo "================================================================="
     echo " Load Balancer Unhealthy Host Alarm Set"
-    echo "========================================"
+    echo "================================================================="
     # Load Balancer High Latency Check
     aws cloudwatch put-metric-alarm --alarm-name "$CLIENT LB High Latency" --alarm-description "$CLIENT Load Balancer Latency >15 Seconds for 1 Minute" --metric-name "Latency" --namespace "AWS/ELB" --statistic "Average" --period 60 --threshold 15 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
-    echo "========================================"
+    echo "================================================================="
     echo "  Load Balancer High Latency Alarm Set"
-    echo "========================================"
+    echo "================================================================="
   fi
 
   # Begin loop to create server alarms
@@ -65,15 +65,15 @@ if [[ $SERVERNUM > 0 ]] && echo "$SERVERNUM" | egrep '^[0-9]+$' >/dev/null 2>&1;
 
         # CPU Check
         aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT $SERVERNAME CPU Check" --alarm-description "$CLIENT $ENVIRONMENT $SERVERNAME CPU usage >90% for 5 minutes" --namespace "AWS/EC2" --dimensions Name=InstanceId,Value=$INSTANCEID --metric-name "CPUUtilization" --statistic "Average" --comparison-operator "GreaterThanThreshold" --unit "Percent" --period 60 --threshold 90 --evaluation-periods 5 --alarm-actions "$ALARMACTION"
-        echo "========================================"
+        echo "================================================================="
         echo $CLIENT $ENVIRONMENT $SERVERNAME "CPU Check Alarm Set"
-        echo "========================================"
+        echo "================================================================="
 
         # Status Check
         aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT $SERVERNAME Status Check" --alarm-description "$CLIENT $ENVIRONMENT $SERVERNAME Status Check Failed for 5 minutes" --namespace "AWS/EC2" --dimensions Name=InstanceId,Value=$INSTANCEID --metric-name "StatusCheckFailed" --statistic "Maximum" --comparison-operator "GreaterThanThreshold" --unit "Count" --period 60 --threshold 0 --evaluation-periods 5 --alarm-actions "$ALARMACTION"
-        echo "========================================"
+        echo "================================================================="
         echo $CLIENT $ENVIRONMENT $SERVERNAME "Status Check Alarm Set"
-        echo "========================================"
+        echo "================================================================="
 
       else
         echo "Invalid Instance ID!"
@@ -121,21 +121,21 @@ read -r -p "Setup Database Alarms? (y/n) " SETUPDB
 
         # Database CPU Check
         aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB CPU Check" --alarm-description "$CLIENT $ENVIRONMENT Database CPU usage >90% for 5 minutes" --metric-name "CPUUtilization" --namespace "AWS/RDS" --statistic "Average" --unit "Percent" --period 60 --threshold 90 --comparison-operator "GreaterThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 5 --alarm-actions "$ALARMACTION"
-        echo "========================================"
+        echo "================================================================="
         echo $CLIENT $ENVIRONMENT "Database CPU Check Alarm Set"
-        echo "========================================"
+        echo "================================================================="
 
         # Database Memory Usage Check
         aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB Mem Check" --alarm-description "$CLIENT $ENVIRONMENT Database Freeable Memory < 200 MB for 5 minutes" --metric-name "FreeableMemory" --namespace "AWS/RDS" --statistic "Average" --unit "Bytes" --period 60 --threshold "200000000" --comparison-operator "LessThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 5 --alarm-actions "$ALARMACTION"
-        echo "========================================"
+        echo "================================================================="
         echo $CLIENT $ENVIRONMENT "Database Memory Usage Alarm Set"
-        echo "========================================"
+        echo "================================================================="
 
         # Database Available Storage Space Check
         aws cloudwatch put-metric-alarm --alarm-name "$CLIENT $ENVIRONMENT DB Storage Check" --alarm-description "$CLIENT $ENVIRONMENT Database Available Storage Space < 200 MB" --metric-name "FreeStorageSpace" --namespace "AWS/RDS" --statistic "Average" --unit "Bytes" --period 60 --threshold "200000000" --comparison-operator "LessThanThreshold" --dimensions Name=DBInstanceIdentifier,Value=$DBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
-        echo "========================================"
+        echo "================================================================="
         echo $CLIENT $ENVIRONMENT "Database Available Storage Space Alarm Set"
-        echo "========================================"
+        echo "================================================================="
       done
     else
       if [[ $DBNUM == 0 ]]; then
