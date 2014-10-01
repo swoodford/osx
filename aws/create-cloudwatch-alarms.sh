@@ -31,12 +31,12 @@ if [[ $SERVERNUM > 0 ]] && echo "$SERVERNUM" | egrep '^[0-9]+$' >/dev/null 2>&1;
     fi
 
     # Load Balancer Unhealthy Host Check
-    aws cloudwatch put-metric-alarm --alarm-name "$CLIENT Unhealthy Host Check" --alarm-description "$CLIENT Load Balancer Unhealthy Host Detected" --metric-name "UnHealthyHostCount" --namespace "AWS/ELB" --statistic "Sum" --period 60 --threshold 0 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
+    aws cloudwatch put-metric-alarm --alarm-name "$CLIENT Unhealthy Host Check" --alarm-description "$CLIENT Load Balancer Unhealthy Host Detected" --metric-name "UnHealthyHostCount" --namespace "AWS/ELB" --statistic "Sum" --period 60 --threshold 0 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 3 --alarm-actions "$ALARMACTION"
     echo "================================================================="
     echo " Load Balancer Unhealthy Host Alarm Set"
     echo "================================================================="
     # Load Balancer High Latency Check
-    aws cloudwatch put-metric-alarm --alarm-name "$CLIENT LB High Latency" --alarm-description "$CLIENT Load Balancer Latency >15 Seconds for 1 Minute" --metric-name "Latency" --namespace "AWS/ELB" --statistic "Average" --period 60 --threshold 15 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 1 --alarm-actions "$ALARMACTION"
+    aws cloudwatch put-metric-alarm --alarm-name "$CLIENT LB High Latency" --alarm-description "$CLIENT Load Balancer High Latency" --metric-name "Latency" --namespace "AWS/ELB" --statistic "Average" --period 60 --threshold 15 --comparison-operator "GreaterThanThreshold" --dimensions Name=LoadBalancerName,Value=$LBID --evaluation-periods 2 --alarm-actions "$ALARMACTION"
     echo "================================================================="
     echo "  Load Balancer High Latency Alarm Set"
     echo "================================================================="
