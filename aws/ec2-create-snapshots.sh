@@ -2,6 +2,15 @@
 # This script takes a snapshot of each EC2 volume that is tagged with Backup=1
 # TODO: Add error handling and loop breaks
 
+# Verify AWS CLI Credentials are setup
+# http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+if ! [ -f ~/.aws/config ]; then
+  if ! [ -f ~/.aws/credentials ]; then
+    echo "Error: AWS config not found or CLI not installed."
+    exit 1
+  fi
+fi
+
 DESCRIBEVOLUMES=$(aws ec2 describe-volumes --filter Name=tag:Backup,Values="1")
 
 TOTALBACKUPVOLUMES=$(echo "$DESCRIBEVOLUMES" | grep Name | cut -f 3 | nl | wc -l)

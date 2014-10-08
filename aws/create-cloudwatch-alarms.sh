@@ -4,11 +4,16 @@
 
 # ALARMACTION="arn:aws:sns:us-east-1:YOURACCOUNTNUMBER:YOURSNSALERTNAME"
 
+# Verify AWS CLI Credentials are setup
+# http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 if ! [ -f ~/.aws/config ]; then
-  echo "Error: AWS config not found or CLI not installed."
-  exit 1
+  if ! [ -f ~/.aws/credentials ]; then
+    echo "Error: AWS config not found or CLI not installed."
+    exit 1
+  fi
 fi
 
+# Verify ALARMACTION is setup with some alert mechanism
 if [[ -z $ALARMACTION ]]; then
   echo "Error: ALARMACTION not configured."
   exit 1
