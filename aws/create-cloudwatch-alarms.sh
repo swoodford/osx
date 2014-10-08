@@ -4,6 +4,16 @@
 
 # ALARMACTION="arn:aws:sns:us-east-1:YOURACCOUNTNUMBER:YOURSNSALERTNAME"
 
+if ! [ -f ~/.aws/config ]; then
+  echo "Error: AWS config not found or CLI not installed."
+  exit 1
+fi
+
+if [[ -z $ALARMACTION ]]; then
+  echo "Error: ALARMACTION not configured."
+  exit 1
+fi
+
 echo "================================================================="
 echo "       Create CloudWatch Alarms"
 echo "================================================================="
