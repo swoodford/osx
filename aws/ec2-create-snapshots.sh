@@ -43,12 +43,12 @@ do
   SNAPSHOTRESULT=$(aws ec2 create-snapshot --volume-id $VOLUME --description $DESCRIPTION)
   # echo "Snapshot result is: "$SNAPSHOTRESULT
 
-  SNAPSHOTID=$(echo $SNAPSHOTRESULT | cut -d ' ' -f5)
+  SNAPSHOTID=$(echo $SNAPSHOTRESULT | cut -d ' ' -f4)
   echo "Snapshot ID: "$SNAPSHOTID
-  #echo $SNAPSHOTID | grep -E "snap-........"
+  # echo $SNAPSHOTID | grep -E "snap-........"
   # sleep 3
 
-  TAGRESULT=$(aws ec2 create-tags --resources $SNAPSHOTID --tags Key=Name,Value=$NAME Key=Client,Value=$CLIENT)
+  TAGRESULT=$(aws ec2 create-tags --resources $SNAPSHOTID --tags Key=Name,Value=$NAME Key=Client,Value=$CLIENT Key=SnapshotCreation,Value=Automatic Key=SnapshotDate,Value=$(date +%m-%d-%Y))
   # echo "Tag Result is: "$TAGRESULT
 done
 
