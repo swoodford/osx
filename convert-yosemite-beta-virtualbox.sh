@@ -5,7 +5,7 @@
 
 gem install iesd
 iesd -i /Applications/Install\ OS\ X\ Yosemite\ Beta.app -o yosemite.dmg -t BaseSystem
-iesd -i /Applications/Install\ OS\ X\ Yosemite\ Beta\ Converted\ 4.app -o yosemite.dmg -t BaseSystem
+# iesd -i /Applications/Install\ OS\ X\ Yosemite\ Beta\ Converted\ 4.app -o yosemite.dmg -t BaseSystem
 hdiutil convert yosemite.dmg -format UDSP -o yosemite.sparseimage
 hdiutil mount /Applications/Install\ OS\ X\ Yosemite\ Beta.app/Contents/SharedSupport/InstallESD.dmg
 hdiutil mount yosemite.sparseimage
@@ -15,3 +15,10 @@ hdiutil unmount /Volumes/OS\ X\ Base\ System/
 hdiutil attach yosemite.sparseimage
 hdiutil detach /Volumes/OS\ X\ Base\ System/
 hdiutil convert yosemite.sparseimage -format UDZO -o Yosemite-Virtualbox-4.dmg
+mkdir ~/Yosemite
+mv Yosemite-Virtualbox-4.dmg ~/Yosemite
+rm yosemite.dmg
+rm yosemite.sparseimage
+cd ~/Yosemite
+open .
+open /Applications/VirtualBox.app
