@@ -8,7 +8,7 @@ while read ipblacklistservers
 do
   scp ipblock.sh ipblacklistmaster $ipblacklistservers:~
   echo Blocking IPs on $ipblacklistservers
-  ssh -n $ipblacklistservers '(./ipblock.sh &)' >> ipblock.log
+  ssh -n $ipblacklistservers '(./ipblock.sh &)' #>> ipblock.log
   # need to test for success/failure here
   echo $ipblacklistservers Done
 done < ipblacklistservers
