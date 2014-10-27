@@ -35,11 +35,12 @@ echo "export GREP_OPTIONS='--color=auto'" >> ~/.bash_profile
 echo "alias ll='ls -fl'" >> ~/.bash_profile
 
 # Source in .profile
-echo "source ~/.profile" >> ~/.bash_profile
+if [ -f ~/.profile ]; then
+	echo "source ~/.profile" >> ~/.bash_profile
+fi
 
 # Load RVM into a shell session *as a function*
 echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"" >> ~/.bash_profile
 
 # Set Java HOME
 echo "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home" >> ~/.bash_profile
-
