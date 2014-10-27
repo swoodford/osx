@@ -27,7 +27,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	if [[ $XCODE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		echo "Install Homebrew"
-		ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 		brew doctor
 
