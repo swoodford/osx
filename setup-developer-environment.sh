@@ -51,6 +51,8 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
 
+		source ~/.rvm/scripts/rvm
+
 		echo "Set default global ruby version"
 
 		rvm use 1.9.3 --default
