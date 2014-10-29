@@ -5,6 +5,7 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 
 - **analyze-ip-relationships.php** Analyze a large list of IPs for potential relationships to help discover a botnet attacking servers
 - **build-mavericks-bootable-usb.sh** Build an OS X Mavericks Bootable Thumb Drive
+- **build-yosemite-bootable-usb.sh** Build an OS X Yosemite Bootable Thumb Drive
 - **convert-yosemite-beta-virtualbox.sh** Convert the OS X Yosemite Beta installer app to a format that is compatible with VirtualBox
 - **customize-bash-profile.sh** Bash profile customizations
 - **install-s3cmd-osx.sh** Install s3cmd on OS X
