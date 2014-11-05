@@ -12,6 +12,7 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 - **ipblacklistmaster** List of IPs known to repeatedly attempt brute force SSH attacks
 - **ipblacklistservers** List of server host name aliases to apply IPTables blocking
 - **ipblock.sh** Runs on the server side to apply IPTables blocking
+- **ipv6blacklistmaster** List of IPv6 IPs known to repeatedly attempt brute force SSH attacks or exploit other vulnerabilities
 - **mysql-backups-cleanup-s3.sh** Delete old database backups from AWS S3
 - **runipblock.sh** Run locally to apply IPTables blocking on servers
 - **server-security-updates.sh** Run locally (on OS X) to apply updates in serverupdates.sh script
