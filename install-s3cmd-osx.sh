@@ -1,16 +1,16 @@
 #!/bin/bash
-CLEAR
-ECHO "==================================================="
-ECHO "This script will download and install s3cmd on OS X"
-ECHO "==================================================="
-mkdir ~/s3cmd
-cd ~/s3cmd
-ECHO "Downloading"
-curl -L -o 's3cmd-1.5.0-beta1.tar.gz' 'http://downloads.sourceforge.net/project/s3tools/s3cmd/1.5.0-beta1/s3cmd-1.5.0-beta1.tar.gz'
-ECHO "Extracting"
-gunzip -c s3cmd-1.5.0-beta1.tar.gz | tar xopf -
-cd s3cmd-1.5.0-beta1
-ECHO "Installing"
-python setup.py install
-ECHO "Installation Completed"
-s3cmd --configure
+
+echo "==================================================="
+echo "This script will download and install s3cmd on OS X"
+echo "==================================================="
+
+command -v s3cmd >/dev/null 2>&1 || {
+	cd ~
+	git clone https://github.com/s3tools/s3cmd.git
+	cd s3cmd
+	sudo python setup.py install
+	read -rp "Configure s3cmd? (y/n) " CONFIGURE
+	if [[ $CONFIGURE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		s3cmd --configure
+	fi
+}
