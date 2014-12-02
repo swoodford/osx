@@ -1,9 +1,11 @@
 #!/bin/bash
+# This script downloads s3cmd from the git repo, installs and starts setup
 
 echo "==================================================="
 echo "This script will download and install s3cmd on OS X"
 echo "==================================================="
 
+# Test if already installed
 command -v s3cmd >/dev/null 2>&1 || {
 	cd ~
 	git clone https://github.com/s3tools/s3cmd.git
@@ -14,3 +16,6 @@ command -v s3cmd >/dev/null 2>&1 || {
 		s3cmd --configure
 	fi
 }
+
+echo " "
+echo "s3cmd installed"
