@@ -1,7 +1,7 @@
 osx
 =======
 
-A collection of shell scripts meant to be run in OS X for performing various tasks
+A collection of shell scripts meant to be run in OS X for automating various tasks
 
 - **analyze-ip-relationships.php** Analyze a large list of IPs for potential relationships to help discover a botnet attacking servers
 - **build-mavericks-bootable-usb.sh** Build an OS X Mavericks Bootable Thumb Drive
@@ -18,6 +18,6 @@ A collection of shell scripts meant to be run in OS X for performing various tas
 - **server-security-updates.sh** Run locally (on OS X) to apply updates in serverupdates.sh script
 - **serverlist** List of server host name aliases to apply updates
 - **serverupdates.sh** Automatically install server updates and log results to file
-- **setup-developer-environment.sh** Setup a new developer environment in OS X (untested and considered experimental)
+- **setup-developer-environment.sh** Setup a new developer environment in OS X
 - **syncSSHkeys.sh** Sync authorized ssh keys on all servers with a master list
 - **update-developer-environment.sh** Update developer environment in OS X
