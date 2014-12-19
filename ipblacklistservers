@@ -1,1 +1,0 @@
-This file should contain the list of server host name aliases set in ~/.ssh/config to apply iptables blocking (see runipblock.sh)
