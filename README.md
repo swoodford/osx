@@ -9,6 +9,9 @@ A collection of shell scripts meant to be run in OS X for automating various tas
 - **customize-bash-profile.sh** Bash profile customizations
 - **install-s3cmd-osx.sh** Install s3cmd on OS X
 - **mysql-backups-cleanup-s3.sh** Delete old database backups from AWS S3
+- **Restart AirPort Extreme Router.scpt** AppleScript to Restart AirPort Extreme Router
+- **Restart AirPort Extreme Router.app** Exported AppleScript application to Restart AirPort Extreme Router
+- **Restart Apple Mail.workflow** Automator script to Restart Apple Mail
 - **server-security-updates.sh** Run locally (on OS X) to apply updates in serverupdates.sh script
 - **serverlist** List of server host name aliases to apply updates
 - **serverupdates.sh** Automatically install server updates and log results to file
