@@ -10,7 +10,6 @@ read -rp "This script will update your developer environment in OS X. Proceed wi
 if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 	echo "Update Homebrew"
-
 	brew update
 
 	echo "List outdated Homebrew packages"
@@ -23,11 +22,21 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	brew doctor
 	pause
 
+	echo "Update pip"
+	sudo easy_install -U pip
+
 	echo "Update RVM"
+	gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 	rvm get stable
 
 	echo "Cleanup RVM"
 	rvm cleanup all
+
+	echo "Update awscli"
+	pip install --upgrade awscli
+
+	echo "Update cli53"
+	sudo pip install --upgrade cli53
 
 else
 	echo "Cancelled."
