@@ -15,11 +15,18 @@ read -rp "This script will setup a new developer environment in OS X, Proceed wi
 if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 	echo "Show Hidden Files (Mavericks/Yosemite)"
-	defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+	defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+	# defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
 
-	if ! -f ~/.bash_profile; then
+	if ! [ -f ~/.bash_profile ]; then
 		# Bash profile customizations
 		touch ~/.bash_profile
+		
+		# Add alias for ll
+		echo "alias ll='ls -fl'" >> ~/.bash_profile
+
+		# Add alias for git clone
+		echo "alias gc='git clone'" >> ~/.bash_profile
 		
 		# Setup custom command prompt in your .bash_profile
 		echo 'export PS1="\h\[\e[32;1m\] \w\[\e[32;1m\] \$(__git_ps1) \[\e[0m\]"' >> ~/.bash_profile
@@ -49,9 +56,6 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		# Tell grep to highlight matches
 		echo "export GREP_OPTIONS='--color=auto'" >> ~/.bash_profile
 
-		# Add alias for ll
-		echo "alias ll='ls -fl'" >> ~/.bash_profile
-
 		# Source in .profile
 		if [ -f ~/.profile ]; then
 			echo "source ~/.profile" >> ~/.bash_profile
@@ -61,6 +65,12 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		
 		echo "export PATH=/usr/local/bin:\$PATH" >> ~/.bash_profile
 	fi
+
+# Add gitconfig for customization later
+if ! [ -f ~/.gitconfig ]; then
+	touch ~/.gitconfig
+	cat git/.gitconfig >> ~/.gitconfig
+fi
 
 	echo "Install Xcode command line tools"
 	xcode-select --install
@@ -83,7 +93,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		git --version
 
-		echo "Version should be ≥ git version 2.1.3, if not check $PATH or restart terminal"
+		echo "Version should be ≥ git version 2.2.2, if not check $PATH or restart terminal"
 		pause
 
 		echo "Speed up gem installation by disabling documentation"
@@ -135,7 +145,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		rails -v
 
-		echo "Should be ≥ Rails 4.1.7"
+		echo "Should be ≥ Rails 4.2.0"
 		pause
 
 		echo "Update RubyGems"
@@ -144,7 +154,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		gem -v
 
-		echo "Should be ≥ 2.4.2"
+		echo "Should be ≥ RubyGems 2.4.5"
 		pause
 
 		echo "Install extra brew packages"
@@ -159,7 +169,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		python --version
 
-		echo "python --version Should be ≥ Python 2.7.8, if not check $PATH or restart terminal"
+		echo "python --version Should be ≥ Python 2.7.9, if not check $PATH or restart terminal"
 		pause
 
 		echo "Check Java version"
