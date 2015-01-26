@@ -18,6 +18,15 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
 	# defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
 
+	echo "Install Sublime Text"
+	open http://www.sublimetext.com/2
+
+	echo "Link Sublime command line utility"
+	ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+	echo "Install Sublime Text Package Control"
+	open https://packagecontrol.io/installation
+
 	if ! [ -f ~/.bash_profile ]; then
 		# Bash profile customizations
 		touch ~/.bash_profile
