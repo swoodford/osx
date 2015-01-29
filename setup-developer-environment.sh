@@ -20,6 +20,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 	echo "Install Sublime Text"
 	open http://www.sublimetext.com/2
+	pause
 
 	echo "Link Sublime command line utility"
 	ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
@@ -113,8 +114,6 @@ fi
 		if ! grep -q "no-document" ~/.gemrc; then
 			echo "gem: --no-document" >> ~/.gemrc
 		fi
-
-		source ~/.bash_profile
 		
 		read -rp "Install RVM with Ruby, which Ruby version? (ex. 1.9.3, 2.0.0) " RUBYV
 
@@ -123,6 +122,7 @@ fi
 		curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --ruby=$RUBYV
 
 		source ~/.rvm/scripts/rvm
+		source ~/.bash_profile
 
 		echo "Update RVM"
 		rvm get stable
