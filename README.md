@@ -3,6 +3,8 @@ osx
 
 A collection of shell scripts meant to be run in OS X for automating various tasks
 
+[![Build Status](https://travis-ci.org/swoodford/osx.svg?branch=master)](https://travis-ci.org/swoodford/osx)
+
 - **airport-config-converter.sh** Convert exported Apple AirPort baseconfig file to nice clean human readable comma delimited file. Usage: airport-config-converter.sh -c airport.baseconfig > airport.baseconfig.csv
 - **backup-to-network-drive.sh** Backup specified local folder to network share drive over AFP
 - **build-mavericks-bootable-usb.sh** Build an OS X Mavericks Bootable Thumb Drive
