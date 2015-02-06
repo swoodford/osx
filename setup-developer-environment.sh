@@ -179,6 +179,8 @@ fi
 
 		homebrew 'gpg'
 
+		homebrew 'node'
+
 		homebrew 'python'
 
 		python --version
@@ -224,6 +226,7 @@ fi
 			aws configure
 			complete -C '/usr/local/aws/bin/aws_completer' aws
 		fi
+		
 	else
 		echo "Xcode must be installed before continuing."
 		exit 1
