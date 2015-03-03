@@ -1,0 +1,22 @@
+[user]
+	name = Your Name Here
+	email = your@emailhere.com
+[color]
+	ui = true
+[push]
+	default = simple
+[core]
+	editor = nano
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  p = pull
+  pu = push
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
