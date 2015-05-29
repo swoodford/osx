@@ -219,7 +219,7 @@ fi
 		}
 
 		echo "Install AWS CLI"
-		pip install awscli
+		sudo pip install awscli
 
 		read -rp "Configure AWS CLI? (y/n) " CONFIGURE
 		if [[ $CONFIGURE =~ ^([yY][eE][sS]|[yY])$ ]]; then
