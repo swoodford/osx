@@ -76,11 +76,14 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		echo "export PATH=/usr/local/bin:\$PATH" >> ~/.bash_profile
 	fi
 
-# Add gitconfig for customization later
-if ! [ -f ~/.gitconfig ]; then
-	touch ~/.gitconfig
-	cat git/.gitconfig >> ~/.gitconfig
-fi
+	# Make nano colorful
+	find /usr/share/nano/ -iname "*.nanorc" -exec echo include {} \; >> ~/.nanorc
+
+	# Add gitconfig for customization later
+	if ! [ -f ~/.gitconfig ]; then
+		touch ~/.gitconfig
+		cat git/.gitconfig >> ~/.gitconfig
+	fi
 
 	echo "Install Xcode command line tools"
 	xcode-select --install
