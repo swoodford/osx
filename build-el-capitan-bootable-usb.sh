@@ -13,5 +13,5 @@ read -p "Proceed to erase and format \"/Volumes/$VOLUME\" with OS X El Capitan? 
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/$VOLUME --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction
+    sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/"$VOLUME" --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction
 fi
