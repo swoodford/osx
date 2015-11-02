@@ -9,9 +9,10 @@ ls -fl /Volumes/
 echo "Which volume contains your 8GB or larger thumb drive?"
 echo
 read VOLUME
-read -p "Proceed to erase and format \"/Volumes/$VOLUME\" with OS X Yosemite? (y/n) " -n 1 -r
+read -p "Proceed to erase and format \"/Volumes/$VOLUME\" as OS X Yosemite Bootable USB? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/"$VOLUME" --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
 fi
+osascript -e 'tell app "Terminal" to display dialog "OS X Yosemite Bootable USB created on volume '$VOLUME'"'
