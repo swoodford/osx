@@ -12,5 +12,5 @@ read -p "Proceed to erase and format \"/Volumes/$VOLUME\" with OS X Mavericks? (
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/$VOLUME --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction
+    sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/"$VOLUME" --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction
 fi

@@ -13,5 +13,5 @@ read -p "Proceed to erase and format \"/Volumes/$VOLUME\" with OS X Yosemite? (y
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/$VOLUME --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
+    sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/"$VOLUME" --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
 fi
