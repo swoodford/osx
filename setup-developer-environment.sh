@@ -23,7 +23,8 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	pause
 
 	echo "Link Sublime command line utility"
-	ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+	sudo mkdir -p /usr/local/bin
+	sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 	echo "Install Sublime Text Package Control"
 	open https://packagecontrol.io/installation
