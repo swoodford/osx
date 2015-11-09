@@ -191,6 +191,8 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 		homebrew 'node'
 
+		homebrew 'jq'
+
 		homebrew 'python'
 
 		python --version
