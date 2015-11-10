@@ -18,6 +18,10 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
 	# defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
 
+	# FIXME
+	#echo "Sudo without password"
+	#sudo sed -i 's,# %wheel ALL=(ALL) NOPASSWD: ALL,%wheel ALL=(ALL) NOPASSWD: ALL,g' /etc/sudoers
+
 	echo "Install Sublime Text"
 	open http://www.sublimetext.com/2
 	pause
