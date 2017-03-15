@@ -13,6 +13,7 @@ A collection of shell scripts meant to be run in OS X for automating various tas
 - **build-yosemite-bootable-usb.sh** Build an OS X Yosemite Bootable Thumb Drive
 - **convert-yosemite-beta-virtualbox.sh** Convert the OS X Yosemite Beta installer app to a format that is compatible with VirtualBox
 - **customize-bash-profile.sh** Bash profile customizations
+- **disassociate-apple-id-iwork.sh** Disassociate an Apple ID from iWork applications, allowing a new Apple ID sign in and App Store updates
 - **install-s3cmd-osx.sh** Install s3cmd on OS X
 - **mysql-backups-cleanup-s3.sh** Delete old database backups from AWS S3
 - **Restart AirPort Extreme Router.scpt** AppleScript to Restart AirPort Extreme Router
