@@ -33,7 +33,7 @@ if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	rvm cleanup all
 
 	echo "Update awscli"
-	pip install --upgrade awscli
+	pip install awscli --upgrade --user
 
 	echo "Update cli53"
 	sudo pip install --upgrade cli53
