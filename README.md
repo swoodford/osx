@@ -15,11 +15,11 @@ A collection of shell scripts meant to be run in OS X for automating various tas
 - **[customize-bash-profile.sh](customize-bash-profile.sh)** Bash profile customizations
 - **[disassociate-apple-id-iwork.sh](disassociate-apple-id-iwork.sh)** Disassociate an Apple ID from iWork applications, allowing a new Apple ID sign in and App Store updates
 - **[install-s3cmd-osx.sh](install-s3cmd-osx.sh)** Install s3cmd on OS X
-- **[Make%20Animated%20GIF.workflow](Make Animated GIF.workflow)** Automator script to generate an animated gif from two or more files selected in Finder using Quick Actions
+- **[Make Animated GIF.workflow](Make%20Animated%20GIF.workflow)** Automator script to generate an animated gif from two or more files selected in Finder using Quick Actions
 - **[mysql-backups-cleanup-s3.sh](mysql-backups-cleanup-s3.sh)** Delete old database backups from AWS S3
-- **[Restart AirPort Extreme Router.scpt](Restart AirPort Extreme Router.scpt)** AppleScript to Restart AirPort Extreme Router
-- **[Restart AirPort Extreme Router.app](Restart AirPort Extreme Router.app)** Exported AppleScript application to Restart AirPort Extreme Router
-- **[Restart Apple Mail.workflow](Restart Apple Mail.workflow)** Automator script to Restart Apple Mail
+- **[Restart AirPort Extreme Router.scpt](Restart%20AirPort%20Extreme%20Router.scpt)** AppleScript to Restart AirPort Extreme Router
+- **[Restart AirPort Extreme Router.app](Restart%20AirPort%20Extreme%20Router.app)** Exported AppleScript application to Restart AirPort Extreme Router
+- **[Restart Apple Mail.workflow](Restart%20Apple%20Mail.workflow)** Automator script to Restart Apple Mail
 - **[server-security-updates.sh](server-security-updates.sh)** Run locally (on OS X) to apply updates in serverupdates.sh script
 - **[serverupdates.sh](serverupdates.sh)** Automatically install server updates and log results to file
 - **[setup-developer-environment.sh](setup-developer-environment.sh)** Setup a new developer environment in OS X
