@@ -17,6 +17,7 @@ A collection of shell scripts meant to be run in OS X for automating various tas
 - **[install-s3cmd-osx.sh](install-s3cmd-osx.sh)** Install s3cmd on OS X
 - **[Make Animated GIF.workflow](Make%20Animated%20GIF.workflow)** Automator script to generate an animated gif from two or more files selected in Finder using Quick Actions
 - **[mysql-backups-cleanup-s3.sh](mysql-backups-cleanup-s3.sh)** Delete old database backups from AWS S3
+- **[remove_DS_Store.sh](remove_DS_Store.sh)** Recursively remove .DS_Store files from current directory
 - **[Restart AirPort Extreme Router.scpt](Restart%20AirPort%20Extreme%20Router.scpt)** AppleScript to Restart AirPort Extreme Router
 - **[Restart AirPort Extreme Router.app](Restart%20AirPort%20Extreme%20Router.app)** Exported AppleScript application to Restart AirPort Extreme Router
 - **[Restart Apple Mail.workflow](Restart%20Apple%20Mail.workflow)** Automator script to Restart Apple Mail
